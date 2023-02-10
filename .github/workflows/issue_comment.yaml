@@ -11,3 +11,10 @@ jobs:
       - name: "dump github context"
         run: echo '${{toJSON(github.event)}}' | jq
         shell: bash
+        
+      - name: Create or Update Comment
+        uses: peter-evans/create-or-update-comment@v2.1.1
+        with:        
+         issue-number: ${{(github.event.issue.number)}}
+         # A comma separated list of reactions to add to the comment.
+         reactions: +1
