@@ -7,7 +7,7 @@ on:
 
 env:
   DOCKER_REGISTRY: docker.io
-  DOCKER_IMAGE: myusername/myimage
+  DOCKER_IMAGE: m1l3m/akcija
 
 jobs:
   build:
