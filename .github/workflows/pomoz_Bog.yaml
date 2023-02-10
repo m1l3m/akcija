@@ -23,9 +23,7 @@ workflow_dispatch:
 
     #poslovi
     jobs:
-    
-        #naziv posla
-        pozdrav:
+       pozdrav:
         
             #na kom sistemu radi
             runs-on: ubuntu-latest
@@ -40,7 +38,7 @@ workflow_dispatch:
                 run: echo "Pomoz Bog"
                 shell: bash
                 
-        zbogom:
+       zbogom:
         
             runs-on: ubuntu-latest
             
