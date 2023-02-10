@@ -22,7 +22,7 @@ on:
 workflow_dispatch:
 
     #poslovi
-    jobs
+    jobs:
     
         #naziv posla
         pozdrav:
