@@ -22,6 +22,6 @@ jobs:
  zbogom:
     runs-on: ubuntu-latest
     steps:
-         -name: zbogom poz
+        - name: zbogom poz
           run: echo "Zbogom"
           shell: bash
