@@ -1,0 +1,31 @@
+name: Welcome new contributors
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check if new contributor
+      id: check-contributor
+      run: |
+        set +x
+        author=$(jq -r '.pull_request.user.login' "$GITHUB_EVENT_PATH")
+        if [ "$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY/collaborators/$author | jq -r '.message')" != "Not Found" ]; then
+          echo "This is an existing contributor."
+          exit 0
+        fi
+        echo "This is a new contributor."
+
+    - name: Welcome new contributor
+      if: steps.check-contributor.outputs.status == 'This is a new contributor.'
+      run: |
+        set -x
+        echo "Welcome to the project, @$author! 🎉"
+        echo "Thank you for contributing to this repository."
+        echo "If you have any questions or need help getting started, don't hesitate to ask."
+        echo "We're glad to have you on board! 🚀"
