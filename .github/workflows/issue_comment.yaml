@@ -5,6 +5,7 @@ on:
     types: [opened]
     
 jobs:
+
   comment-with-action:
     runs-on: ubuntu-latest
     steps:
@@ -14,7 +15,8 @@ jobs:
         
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@67dcc547d311b736a8e6c5c236542148a47adc3d
-        with:        
+        with:   
+         GITHUB_TOKEN: ${{ github.token }}
          issue-number: ${{ github.event.issue.number }}         
          body: |
           komentar
