@@ -1,48 +1,27 @@
 name: pomoz_Bog workflow
 
-#na koje akcije radi
 on:
-
-    #ovo je akcija
     push:
-    
-        #ovo je branch za koji radi
         branches:
-            -main
-            
-    #ovo je akcija
+            - main
     pull_request:
-    
-        #ovo je branch za koji radi
         branches:
-            -main
-            
+            - main            
+    workflow_dispatch:
+    
+jobs:
 
-#sad definisemo workflow         
-workflow_dispatch:
-
-    #poslovi
-    jobs:
-       pozdrav:
-        
-            #na kom sistemu radi
-            runs-on: ubuntu-latest
-            
-            #koraci koje obavlja u okviru posla
-            steps:
-                #koristimo public akciju
-                #iza @ je verzija
-                #moze biti i commit hash ili branch
-                -uses: actions/checkout@v2
-                -name: pomoz Bog
-                run: echo "Pomoz Bog"
-                shell: bash
+ pozdrav:
+    runs-on: ubuntu-latest
+    steps: 
+        - uses: actions/checkout@v2
+        - name: pomoz Bog
+          run: echo "Pomoz Bog"
+          shell: bash
                 
-       zbogom:
-        
-            runs-on: ubuntu-latest
-            
-            steps:
-                -name: zbogom
-                run: echo "Zbogom"
-                shell: bash
+ zbogom:
+    runs-on: ubuntu-latest
+    steps:
+         -name: zbogom
+          run: echo "Zbogom"
+          shell: bash
