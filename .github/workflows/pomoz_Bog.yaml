@@ -24,7 +24,7 @@ jobs:
          #koristimo public akciju
          #iza @ je verzija
          #moze biti i commit hash ili branch
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v3
         - name: pomoz Bog
           run: echo "Pomoz Bog"
           shell: bash
