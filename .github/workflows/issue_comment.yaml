@@ -16,5 +16,6 @@ jobs:
         uses: peter-evans/create-or-update-comment@v2.1.1
         with:        
          issue-number: ${{(github.event.issue.number)}}         
-         body: comment
+         body: |
+          komentar
          reactions: +1
