@@ -15,6 +15,6 @@ jobs:
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.1.1
         with:        
-         issue-number: ${{(github.event.issue.number)}}
-         # A comma separated list of reactions to add to the comment.
+         issue-number: ${{(github.event.issue.number)}}         
+         body: comment
          reactions: +1
