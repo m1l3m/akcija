@@ -1,0 +1,29 @@
+name: keep_on_pushing_workflow
+
+on:
+    push:
+        branches:
+            - main
+         
+    workflow_dispatch:
+
+jobs:
+
+ pozdrav:
+
+    
+    runs-on: ubuntu-latest
+     
+    
+    steps: 
+         - name: Keep on pushing says the API
+        run: |
+          gh api -X POST \
+            https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}
+            -f body='
+            GH API says KEEP ON PUSHING
+            '
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORGANIZATION: ${{ github.event.organization.login }}
+          REPOSITORY: ${{ github.event.repository.name }}
