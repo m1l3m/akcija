@@ -1,0 +1,37 @@
+name: pomoz_Bog workflow
+
+on:
+#ovo je akcija na koju radi
+    push:
+        branches:
+        #ovo je branch za koji radi
+            - main
+    pull_request:
+        branches:
+            - main  
+            #sad definisemo workflow          
+    workflow_dispatch:
+#poslovi
+jobs:
+
+ pozdrav:
+
+    #na kom sistemu radi
+    runs-on: ubuntu-latest
+     
+    #koraci koje obavlja u okviru posla
+    steps: 
+         #koristimo public akciju
+         #iza @ je verzija
+         #moze biti i commit hash ili branch
+        - uses: actions/checkout@v3
+        - name: pomoz Bog
+          run: echo "Pomoz Bog"
+          shell: bash
+                
+ zbogom:
+    runs-on: ubuntu-latest
+    steps:
+        - name: zbogom poz
+          run: echo "Zbogom"
+          shell: bash
